@@ -1,0 +1,30 @@
+Remove Consecutive Duplicates from Sorted Linked List
+
+
+#
+# Complete the 'deleteDuplicates' function below.
+#
+# The function is expected to return an INTEGER_SINGLY_LINKED_LIST.
+# The function accepts INTEGER_SINGLY_LINKED_LIST head as parameter.
+#
+
+#
+# For your reference:
+#
+# SinglyLinkedListNode:
+#     int data
+#     SinglyLinkedListNode next
+#
+#
+
+def deleteDuplicates(head):
+    curr=head
+    while curr and curr.next:
+        if curr.data == curr.next.data:
+            curr.next=curr.next.next
+        else:
+            curr=curr.next
+    return head
+
+
+
